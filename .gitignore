@@ -65,6 +65,9 @@ profile
 *.ipa
 
 ####
+# CocoaPods
+Pods/
+
+####
 # Carthage
 Carthage/Build
-
