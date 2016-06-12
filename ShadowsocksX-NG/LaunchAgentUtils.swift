@@ -56,6 +56,47 @@ func generateSSLocalLauchAgentPlist() -> Bool {
     }
 }
 
+
+class SSLocalSupport: NSObject {
+    
+    static var sslocalserver:NSThread!
+
+    static func startEmbadSSLocal(){
+        sslocalserver = NSThread.init(target: self, selector:#selector(innerRunSSLocal), object: nil)
+        sslocalserver.name = "SSLocal"
+        sslocalserver.start();
+    }
+    
+    static func innerRunSSLocal() {
+        
+        var profile = profile_t()
+        
+        let remote_host = "example.com".UTF8String
+        profile.remote_host = UnsafeMutablePointer(remote_host)
+        
+        let local_host = "127.0.0.1".UTF8String
+        profile.local_addr = UnsafeMutablePointer(local_host)
+        
+        let method = "aes-128-cfb".UTF8String
+        profile.method = UnsafeMutablePointer(method)
+
+        let password = "123456".UTF8String
+        profile.password = UnsafeMutablePointer(password)
+    
+        profile.remote_port = 443
+        profile.local_port = 1080
+        profile.timeout = 60
+        profile.auth = 1
+        profile.verbose = 1
+        
+        NSLog("Run SSLocal");
+        
+        let rst = start_ss_local_server(profile)
+        NSLog("SSLocal Stoped:%d",rst);
+        
+    }
+}
+
 func ReloadConfSSLocal() {
     let bundle = NSBundle.mainBundle()
     let installerPath = bundle.pathForResource("reload_conf_ss_local.sh", ofType: nil)

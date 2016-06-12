@@ -8,3 +8,5 @@
 #import "SWBQRCodeWindowController.h"
 #import "Utils.h"
 #import "ProxyConfHelper.h"
+
+#import "shadowsocks.h"

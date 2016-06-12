@@ -39,6 +39,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         
         NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
         
+        // run here
+        SSLocalSupport.startEmbadSSLocal()
+        
         // Prepare ss-local
         InstallSSLocal()
         
