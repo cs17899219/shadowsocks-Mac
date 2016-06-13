@@ -35,22 +35,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     var statusItem: NSStatusItem!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
-        
-        NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
-        
-        // run here
-        SSLocalSupport.startEmbadSSLocal()
-        
-        // Prepare ss-local
-        InstallSSLocal()
-        
+
         // Prepare defaults
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.registerDefaults([
             "ShadowsocksOn": true,
             "ShadowsocksRunningMode": "auto",
-            "LocalSocks5.ListenPort": NSNumber(unsignedShort: 1086),
+            "LocalSocks5.ListenPort": NSNumber(unsignedShort: 1080),
             "LocalSocks5.ListenAddress": "127.0.0.1",
             "LocalSocks5.Timeout": NSNumber(unsignedInteger: 60),
             "LocalSocks5.EnableUDPRelay": NSNumber(bool: false),
@@ -63,19 +54,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         statusItem.image = image
         statusItem.menu = statusMenu
         
-        
+        // Notify Center
+        NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
         let notifyCenter = NSNotificationCenter.defaultCenter()
         notifyCenter.addObserverForName(NOTIFY_SERVER_PROFILES_CHANGED, object: nil, queue: nil
             , usingBlock: {
             (note) in
                 self.updateServersMenu()
-                SyncSSLocal()
+                SSLocalManager.reload()
             }
         )
         notifyCenter.addObserverForName(NOTIFY_ADV_CONF_CHANGED, object: nil, queue: nil
             , usingBlock: {
             (note) in
-                SyncSSLocal()
+                SSLocalManager.reload()
             }
         )
         notifyCenter.addObserverForName("NOTIFY_FOUND_SS_URL", object: nil, queue: nil) {
@@ -122,14 +114,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             , andSelector: #selector(self.handleURLEvent)
             , forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
         
+        
         updateMainMenu()
         updateServersMenu()
         updateRunningModeMenu()
         updateLaunchAtLoginMenu()
         
         ProxyConfHelper.install()
+        
         applyConfig()
-        SyncSSLocal()
+        SSLocalManager.start()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -138,20 +132,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     
     func applyConfig() {
         let defaults = NSUserDefaults.standardUserDefaults()
+        
         let isOn = defaults.boolForKey("ShadowsocksOn")
         let mode = defaults.stringForKey("ShadowsocksRunningMode")
         
         if isOn {
-            StartSSLocal()
             if mode == "auto" {
                 ProxyConfHelper.enablePACProxy()
             } else if mode == "global" {
                 ProxyConfHelper.enableGlobalProxy()
-            } else if mode == "manual" {
-                ProxyConfHelper.disableProxy()
-            }
+            } //else if mode == "manual" {
+             //   ProxyConfHelper.disableProxy()
+            //}
         } else {
-            StopSSLocal()
             ProxyConfHelper.disableProxy()
         }
     }
@@ -244,12 +237,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         applyConfig()
     }
     
+    /*
     @IBAction func selectManualMode(sender: NSMenuItem) {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setValue("manual", forKey: "ShadowsocksRunningMode")
         updateRunningModeMenu()
         applyConfig()
-    }
+    }*/
     
     @IBAction func editServerPreferences(sender: NSMenuItem) {
         if preferencesWinCtrl != nil {
@@ -282,7 +276,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         if newProfile.uuid != spMgr.activeProfileId {
             spMgr.setActiveProfiledId(newProfile.uuid)
             updateServersMenu()
-            SyncSSLocal()
+            SSLocalManager.reload()
         }
     }
     
@@ -309,15 +303,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         if mode == "auto" {
             autoModeMenuItem.state = 1
             globalModeMenuItem.state = 0
-            manualModeMenuItem.state = 0
         } else if mode == "global" {
             autoModeMenuItem.state = 0
             globalModeMenuItem.state = 1
-            manualModeMenuItem.state = 0
-        } else if mode == "manual" {
-            autoModeMenuItem.state = 0
-            globalModeMenuItem.state = 0
-            manualModeMenuItem.state = 1
         }
     }
     

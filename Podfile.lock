@@ -1,15 +1,18 @@
 PODS:
   - Alamofire (3.4.0)
   - BRLOptionParser (0.3.1)
+  - OpenSSL (1.0.208)
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
   - BRLOptionParser (~> 0.3.1)
+  - OpenSSL (~> 1.0.0)
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
   BRLOptionParser: a03256a8ff003ca1f5376c55f55f210e085a3958
+  OpenSSL: b187269d386b07452f56af273764ea0636dd5da8
 
-PODFILE CHECKSUM: a76490e9ab2548c7b811762e2479c111c5c263b7
+PODFILE CHECKSUM: 63c09b50d6cd39948a66dd705facad33112572a6
 
 COCOAPODS: 1.0.0

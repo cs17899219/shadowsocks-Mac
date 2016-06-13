@@ -13,6 +13,62 @@ let APP_SUPPORT_DIR = "/Library/Application Support/ShadowsocksX-NE/"
 let LAUNCH_AGENT_DIR = "/Library/LaunchAgents/"
 let LAUNCH_AGENT_CONF_NAME = "com.qiuyuzhou.shadowsocksX-NE.local.plist"
 
+class SSLocalManager: NSObject {
+    
+    static var sslocalserver:NSThread!
+    
+    static let mgr = ServerProfileManager()
+    
+    class func start(){
+        sslocalserver = NSThread.init(target: self, selector: #selector(innerRunSSLocal)  , object: nil)
+        sslocalserver.name = "SSLocal"
+        sslocalserver.start()
+    }
+    
+    class func reload(){
+        NSLog("TODO restart sslocal with latest config");
+    }
+    
+    class func innerRunSSLocal() {
+        
+        let mgr = ServerProfileManager()
+        if let pf = mgr.getActiveProfile() {
+            if pf.isValid() {
+               
+                var profile = profile_t()
+                
+                let remote_host = (pf.serverHost as NSString).UTF8String
+                profile.remote_host = UnsafeMutablePointer(remote_host)
+                
+                let method = (pf.method as NSString).UTF8String
+                profile.method = UnsafeMutablePointer(method)
+                
+                let password = (pf.password as NSString).UTF8String
+                profile.password = UnsafeMutablePointer(password)
+                
+                profile.remote_port = Int32(pf.serverPort)
+                
+                profile.auth = (pf.ota as Bool) ? 1 : 0
+                
+                let defaults = NSUserDefaults.standardUserDefaults()
+
+                let local_host = (defaults.stringForKey("LocalSocks5.ListenAddress")! as NSString).UTF8String
+                profile.local_addr = UnsafeMutablePointer(local_host)
+                profile.local_port = Int32(UInt16(defaults.integerForKey("LocalSocks5.ListenPort")))
+                profile.timeout = Int32(UInt32(defaults.integerForKey("LocalSocks5.Timeout")))
+
+                NSLog("Run SSLocal");
+                
+                let rst = start_ss_local_server(profile)
+                
+                NSLog("SSLocal Stoped:%d",rst);
+            }
+        }
+
+    }
+}
+
+/*
 
 func getFileSHA1Sum(filepath: String) -> String {
     if let data = NSData(contentsOfFile: filepath) {
@@ -53,47 +109,6 @@ func generateSSLocalLauchAgentPlist() -> Bool {
         return true
     } else {
         return false
-    }
-}
-
-
-class SSLocalSupport: NSObject {
-    
-    static var sslocalserver:NSThread!
-
-    static func startEmbadSSLocal(){
-        sslocalserver = NSThread.init(target: self, selector:#selector(innerRunSSLocal), object: nil)
-        sslocalserver.name = "SSLocal"
-        sslocalserver.start();
-    }
-    
-    static func innerRunSSLocal() {
-        
-        var profile = profile_t()
-        
-        let remote_host = "example.com".UTF8String
-        profile.remote_host = UnsafeMutablePointer(remote_host)
-        
-        let local_host = "127.0.0.1".UTF8String
-        profile.local_addr = UnsafeMutablePointer(local_host)
-        
-        let method = "aes-128-cfb".UTF8String
-        profile.method = UnsafeMutablePointer(method)
-
-        let password = "123456".UTF8String
-        profile.password = UnsafeMutablePointer(password)
-    
-        profile.remote_port = 443
-        profile.local_port = 1080
-        profile.timeout = 60
-        profile.auth = 1
-        profile.verbose = 1
-        
-        NSLog("Run SSLocal");
-        
-        let rst = start_ss_local_server(profile)
-        NSLog("SSLocal Stoped:%d",rst);
-        
     }
 }
 
@@ -198,3 +213,5 @@ func SyncSSLocal() {
     }
     SyncPac()
 }
+
+*/
