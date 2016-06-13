@@ -15,26 +15,24 @@ let LAUNCH_AGENT_CONF_NAME = "com.qiuyuzhou.shadowsocksX-NE.local.plist"
 
 class SSLocalManager: NSObject {
     
-    static var sslocalserver:NSThread!
-    
     static let mgr = ServerProfileManager()
     
-    class func start(){
-        sslocalserver = NSThread.init(target: self, selector: #selector(innerRunSSLocal)  , object: nil)
-        sslocalserver.name = "SSLocal"
-        sslocalserver.start()
-    }
-    
     class func reload(){
-        NSLog("TODO restart sslocal with latest config");
+        stop()
+        sleep(5);
+        start()
+        NSLog("SSLocal restarted")
     }
     
-    class func innerRunSSLocal() {
-        
-        let mgr = ServerProfileManager()
+    class func stop(){
+        sslocal_stop();
+        NSLog("SSLocal Stopped")
+    }
+    
+    class func start() {
         if let pf = mgr.getActiveProfile() {
             if pf.isValid() {
-               
+                
                 var profile = profile_t()
                 
                 let remote_host = (pf.serverHost as NSString).UTF8String
@@ -51,20 +49,17 @@ class SSLocalManager: NSObject {
                 profile.auth = (pf.ota as Bool) ? 1 : 0
                 
                 let defaults = NSUserDefaults.standardUserDefaults()
-
+                
                 let local_host = (defaults.stringForKey("LocalSocks5.ListenAddress")! as NSString).UTF8String
                 profile.local_addr = UnsafeMutablePointer(local_host)
                 profile.local_port = Int32(UInt16(defaults.integerForKey("LocalSocks5.ListenPort")))
                 profile.timeout = Int32(UInt32(defaults.integerForKey("LocalSocks5.Timeout")))
-
-                NSLog("Run SSLocal");
                 
-                let rst = start_ss_local_server(profile)
-                
-                NSLog("SSLocal Stoped:%d",rst);
+                sslocal_start(profile)
+                NSLog("SSLocal Started")
             }
         }
-
+        
     }
 }
 

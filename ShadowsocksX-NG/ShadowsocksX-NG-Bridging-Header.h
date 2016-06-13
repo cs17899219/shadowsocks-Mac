@@ -9,4 +9,4 @@
 #import "Utils.h"
 #import "ProxyConfHelper.h"
 
-#import "shadowsocks.h"
+#import "SSLocalManager.h"
