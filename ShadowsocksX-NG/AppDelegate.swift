@@ -54,12 +54,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         statusItem.image = image
         statusItem.menu = statusMenu
         
+        // Start sslocal
+        SSLocalManager.start()
+        
         // Notify Center
         NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
         let notifyCenter = NSNotificationCenter.defaultCenter()
         notifyCenter.addObserverForName(NOTIFY_SERVER_PROFILES_CHANGED, object: nil, queue: nil
             , usingBlock: {
             (note) in
+                NSLog("SERVER_PROFILES_CHANGED")
                 self.updateServersMenu()
                 SSLocalManager.reload()
             }
@@ -67,6 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         notifyCenter.addObserverForName(NOTIFY_ADV_CONF_CHANGED, object: nil, queue: nil
             , usingBlock: {
             (note) in
+                NSLog("ADVANCED_CONF_CHANGED")
                 SSLocalManager.reload()
             }
         )
@@ -123,7 +128,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         ProxyConfHelper.install()
         
         applyConfig()
-        SSLocalManager.start()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -275,8 +279,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let newProfile = spMgr.profiles[index]
         if newProfile.uuid != spMgr.activeProfileId {
             spMgr.setActiveProfiledId(newProfile.uuid)
-            updateServersMenu()
-            SSLocalManager.reload()
+            NSNotificationCenter.defaultCenter()
+                .postNotificationName(NOTIFY_SERVER_PROFILES_CHANGED, object: nil)
         }
     }
     
