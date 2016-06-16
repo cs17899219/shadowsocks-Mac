@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		258E511BA910B0521B24DAB8 /* Pods_ShadowsocksX_NG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283ED1A8E9B711AC65670031 /* Pods_ShadowsocksX_NG.framework */; };
 		3C2945061D0ECE260021E0B7 /* SSLocalManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C28D2FD1D0EB98100630700 /* SSLocalManager.c */; };
+		3CBEE8B31D12680F00FF1698 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3CBEE8B21D12680F00FF1698 /* .travis.yml */; };
 		3CF371D81D0DC348003A1FAB /* libshadowsocks-libev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF371D71D0DC348003A1FAB /* libshadowsocks-libev.a */; };
 		3CF371DA1D0DC394003A1FAB /* libcork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF371D91D0DC394003A1FAB /* libcork.a */; };
 		3CF371DC1D0DC3A6003A1FAB /* libev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF371DB1D0DC3A6003A1FAB /* libev.a */; };
@@ -63,6 +64,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3C61AE851D127FBB005032DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B0BFFDD1D0460A70040E62B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3CDFD3941D0D87EB00DA857D;
+			remoteInfo = "shadowsocks-libev";
+		};
 		9B0BFFF51D0460A70040E62B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9B0BFFDD1D0460A70040E62B /* Project object */;
@@ -100,6 +108,7 @@
 		3A33E4E1C20AD6FD20731219 /* Pods-tt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tt/Pods-tt.debug.xcconfig"; sourceTree = "<group>"; };
 		3C28D2FD1D0EB98100630700 /* SSLocalManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SSLocalManager.c; sourceTree = "<group>"; };
 		3C28D2FE1D0EB98100630700 /* SSLocalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLocalManager.h; sourceTree = "<group>"; };
+		3CBEE8B21D12680F00FF1698 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		3CDFCF401D0D87B800DA857D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3CDFCF411D0D87B800DA857D /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		3CDFCF421D0D87B800DA857D /* .uncrustify.cfg */ = {isa = PBXFileReference; lastKnownFileType = text; path = .uncrustify.cfg; sourceTree = "<group>"; };
@@ -3797,6 +3806,7 @@
 				9B0BFFE61D0460A70040E62B /* Products */,
 				33F4F299F89330966F4526E4 /* Pods */,
 				D3CE66CC039F651F28057DDB /* Frameworks */,
+				3CBEE8B21D12680F00FF1698 /* .travis.yml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3926,6 +3936,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3C61AE861D127FBB005032DB /* PBXTargetDependency */,
 				9B3FFF531D09E2B30019A709 /* PBXTargetDependency */,
 			);
 			name = "ShadowsocksX-NG";
@@ -4030,6 +4041,7 @@
 				9BEEF0691D04D4D500FC52B3 /* install_ss_local.sh in Resources */,
 				9B172A6A1D0ADDDD00B87B9A /* Localizable.strings in Resources */,
 				9B2491B41D0ACC3A003BBECC /* PreferencesWindowController.xib in Resources */,
+				3CBEE8B31D12680F00FF1698 /* .travis.yml in Resources */,
 				9B3FFF291D08A1DF0019A709 /* user-rule.txt in Resources */,
 				9BEEF06A1D04D4D500FC52B3 /* start_ss_local.sh in Resources */,
 				9B3FFF391D08CF110019A709 /* qrcode.min.js in Resources */,
@@ -4225,6 +4237,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3C61AE861D127FBB005032DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3CDFD3941D0D87EB00DA857D /* shadowsocks-libev */;
+			targetProxy = 3C61AE851D127FBB005032DB /* PBXContainerItemProxy */;
+		};
 		9B0BFFF61D0460A70040E62B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9B0BFFE41D0460A70040E62B /* ShadowsocksX-NG */;
@@ -4404,6 +4421,7 @@
 					"$(PROJECT_DIR)/shadowsocks-libev/libev/.libs",
 					"$(PROJECT_DIR)/shadowsocks-libev/libsodium/src/libsodium/.libs",
 					"$(PROJECT_DIR)/shadowsocks-libev/libudns/.libs",
+					"$(PROJECT_DIR)/shadowsocks-libev/libipset/.libs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.qiuyuzhou.ShadowsocksX-NG";
@@ -4435,6 +4453,7 @@
 					"$(PROJECT_DIR)/shadowsocks-libev/libev/.libs",
 					"$(PROJECT_DIR)/shadowsocks-libev/libsodium/src/libsodium/.libs",
 					"$(PROJECT_DIR)/shadowsocks-libev/libudns/.libs",
+					"$(PROJECT_DIR)/shadowsocks-libev/libipset/.libs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.qiuyuzhou.ShadowsocksX-NG";
