@@ -52,6 +52,12 @@ class SSLocalManager: NSObject {
         NSLog("Finished sslocal start")
     }
     
+    class func stop() {
+        NSLog("Begin sslocal stop")
+        sslocal_stop()
+        NSLog("Finished sslocal stop")
+    }
+    
     class func getProfile() -> profile_t? {
         if let pf = mgr.getActiveProfile() {
             if pf.isValid() {

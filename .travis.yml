@@ -9,4 +9,4 @@ install:
   - pod install --repo-update --verbose
 before_script:
   - cd shadowsocks-libev && ./configure --with-openssl=/usr/local/opt/openssl/ && cd ..
-script: set -o pipefail && xcodebuild test -workspace ShadowsocksX-NG.xcworkspace -scheme ShadowsocksX-NG|xcpretty
+script: set -o pipefail && xcodebuild build -workspace ShadowsocksX-NG.xcworkspace -scheme ShadowsocksX-NG|xcpretty
