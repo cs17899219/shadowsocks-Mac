@@ -141,16 +141,20 @@ int sslocal_stop()
 {
     printf("SSLocal: Stop \n");
     if (isrunning == 1) {
+        pthread_t * p = &ss_thread;
 
-        pthread_kill(ss_thread, SIGUSR1);
-        printf("SSLocal: Sent Signal to %p\n", ss_thread);
+        if( 0 == pthread_kill(*p, SIGUSR1) ){
+            printf("SSLocal: Sent Signal to %p\n", ss_thread);
         
-        pthread_join(ss_thread, NULL);
-        printf("SSLocal: Stopped \n");
+            pthread_join(*p, NULL);
+            printf("SSLocal: Stopped \n");
+        }else{
+            printf("SSLocal: Not running (1) \n");
+        }
        
         return 0;
     }
-    printf("SSLocal: Not running \n");
+    printf("SSLocal: Not running (2) \n");
     
     return -1;
 }

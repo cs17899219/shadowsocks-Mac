@@ -15,9 +15,9 @@ let LAUNCH_AGENT_CONF_NAME = "com.qiuyuzhou.shadowsocksX-NE.local.plist"
 
 class SSLocalManager: NSObject {
     
-    static var sslocalserver:NSThread!
+    static let profileManager:ServerProfileManager = ServerProfileManager();
     
-    static let mgr = ServerProfileManager()
+    static var sslocalserver:NSThread!
     
     class func reload() {
         NSLog("Begin sslocal reload")
@@ -61,7 +61,7 @@ class SSLocalManager: NSObject {
     }
     
     class func getProfile() -> profile_t? {
-        if let pf = mgr.getActiveProfile() {
+        if let pf = profileManager.getActiveProfile() {
             if pf.isValid() {
                 
                 var profile = profile_t()

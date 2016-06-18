@@ -80,14 +80,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             if let userInfo = note.userInfo {
                 let urls: [NSURL] = userInfo["urls"] as! [NSURL]
                 
-                let mgr = ServerProfileManager()
                 var isChanged = false
                 
                 for url in urls {
                     let profielDict = ParseSSURL(url)
                     if let profielDict = profielDict {
                         let profile = ServerProfile.fromDictionary(profielDict)
-                        mgr.profiles.append(profile)
+                        
+                        SSLocalManager.profileManager.profiles.append(profile)
                         isChanged = true
                         
                         let userNote = NSUserNotification()
@@ -108,7 +108,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
                 }
                 
                 if isChanged {
-                    mgr.save()
+                    SSLocalManager.profileManager.save()
                     self.updateServersMenu()
                 }
             }
@@ -191,8 +191,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     
     @IBAction func showQRCodeForCurrentServer(sender: NSMenuItem) {
         var errMsg: String?
-        let mgr = ServerProfileManager()
-        if let profile = mgr.getActiveProfile() {
+        if let profile = SSLocalManager.profileManager.getActiveProfile() {
             if profile.isValid() {
                 // Show window
                 if qrcodeWinCtrl != nil{
@@ -276,10 +275,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     
     @IBAction func selectServer(sender: NSMenuItem) {
         let index = sender.tag
-        let spMgr = ServerProfileManager()
-        let newProfile = spMgr.profiles[index]
-        if newProfile.uuid != spMgr.activeProfileId {
-            spMgr.setActiveProfiledId(newProfile.uuid)
+        let newProfile = SSLocalManager.profileManager.profiles[index]
+        if newProfile.uuid != SSLocalManager.profileManager.activeProfileId {
+            SSLocalManager.profileManager.setActiveProfiledId(newProfile.uuid)
             NSNotificationCenter.defaultCenter()
                 .postNotificationName(NOTIFY_SERVER_PROFILES_CHANGED, object: nil)
         }
@@ -331,12 +329,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     }
     
     func updateServersMenu() {
-        let mgr = ServerProfileManager()
         serversMenuItem.submenu?.removeAllItems()
         let preferencesItem = serversPreferencesMenuItem
         
         var i = 0
-        for p in mgr.profiles {
+        for p in SSLocalManager.profileManager.profiles {
             let item = NSMenuItem()
             item.tag = i
             if p.remark.isEmpty {
@@ -344,7 +341,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             } else {
                 item.title = "\(p.remark) (\(p.serverHost):\(p.serverPort))"
             }
-            if mgr.activeProfileId == p.uuid {
+            if SSLocalManager.profileManager.activeProfileId == p.uuid {
                 item.state = 1
             }
             if !p.isValid() {
@@ -355,7 +352,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             serversMenuItem.submenu?.addItem(item)
             i += 1
         }
-        if !mgr.profiles.isEmpty {
+        if !SSLocalManager.profileManager.profiles.isEmpty {
             serversMenuItem.submenu?.addItem(NSMenuItem.separatorItem())
         }
         serversMenuItem.submenu?.addItem(preferencesItem)
