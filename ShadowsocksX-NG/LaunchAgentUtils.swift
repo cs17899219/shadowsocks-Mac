@@ -86,9 +86,12 @@ class SSLocalManager: NSObject {
                 profile.local_port = Int32(UInt16(defaults.integerForKey("LocalSocks5.ListenPort")))
                 profile.timeout = Int32(UInt32(defaults.integerForKey("LocalSocks5.Timeout")))
                 
-                 let logFilePath = (NSHomeDirectory() + "/Library/Logs/ShadowsocksLocal.log" as NSString).UTF8String
-                 profile.log = UnsafeMutablePointer(logFilePath);
+                profile.mode = defaults.boolForKey("LocalSocks5.EnableUDPRelay") ? 1 : 0
+                profile.verbose = defaults.boolForKey("LocalSocks5.EnableVerboseMode") ? 1 : 0
                 
+                let logFilePath = (NSHomeDirectory() + "/Library/Logs/ShadowsocksLocal.log" as NSString).UTF8String
+                profile.log = UnsafeMutablePointer(logFilePath);
+
                 return profile
             }
         }
