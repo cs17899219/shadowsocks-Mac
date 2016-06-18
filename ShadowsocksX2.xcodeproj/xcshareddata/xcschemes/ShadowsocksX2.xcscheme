@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9B0BFFE41D0460A70040E62B"
-               BuildableName = "ShadowsocksX-NG.app"
-               BlueprintName = "ShadowsocksX-NG"
-               ReferencedContainer = "container:ShadowsocksX-NG.xcodeproj">
+               BuildableName = "ShadowsocksX2.app"
+               BlueprintName = "ShadowsocksX2"
+               ReferencedContainer = "container:ShadowsocksX2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9B0BFFF31D0460A70040E62B"
-               BuildableName = "ShadowsocksX-NGTests.xctest"
-               BlueprintName = "ShadowsocksX-NGTests"
-               ReferencedContainer = "container:ShadowsocksX-NG.xcodeproj">
+               BuildableName = "ShadowsocksX2.xctest"
+               BlueprintName = "ShadowsocksX2Tests"
+               ReferencedContainer = "container:ShadowsocksX2.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9B0BFFE41D0460A70040E62B"
-            BuildableName = "ShadowsocksX-NG.app"
-            BlueprintName = "ShadowsocksX-NG"
-            ReferencedContainer = "container:ShadowsocksX-NG.xcodeproj">
+            BuildableName = "ShadowsocksX2.app"
+            BlueprintName = "ShadowsocksX2"
+            ReferencedContainer = "container:ShadowsocksX2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9B0BFFE41D0460A70040E62B"
-            BuildableName = "ShadowsocksX-NG.app"
-            BlueprintName = "ShadowsocksX-NG"
-            ReferencedContainer = "container:ShadowsocksX-NG.xcodeproj">
+            BuildableName = "ShadowsocksX2.app"
+            BlueprintName = "ShadowsocksX2"
+            ReferencedContainer = "container:ShadowsocksX2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9B0BFFE41D0460A70040E62B"
-            BuildableName = "ShadowsocksX-NG.app"
-            BlueprintName = "ShadowsocksX-NG"
-            ReferencedContainer = "container:ShadowsocksX-NG.xcodeproj">
+            BuildableName = "ShadowsocksX2.app"
+            BlueprintName = "ShadowsocksX2"
+            ReferencedContainer = "container:ShadowsocksX2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

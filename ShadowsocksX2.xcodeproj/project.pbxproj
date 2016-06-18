@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		258E511BA910B0521B24DAB8 /* Pods_ShadowsocksX_NG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283ED1A8E9B711AC65670031 /* Pods_ShadowsocksX_NG.framework */; };
+		08791C187E8FCBA818F51F89 /* Pods_ShadowsocksX2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487E4D8604A4A414FD4FFA27 /* Pods_ShadowsocksX2Tests.framework */; };
 		3C2945061D0ECE260021E0B7 /* SSLocalManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C28D2FD1D0EB98100630700 /* SSLocalManager.c */; };
 		3CF371D81D0DC348003A1FAB /* libshadowsocks-libev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF371D71D0DC348003A1FAB /* libshadowsocks-libev.a */; };
 		3CF371DA1D0DC394003A1FAB /* libcork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF371D91D0DC394003A1FAB /* libcork.a */; };
@@ -19,6 +19,7 @@
 		3CF371E61D0DC3BF003A1FAB /* libssse3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF371E11D0DC3BF003A1FAB /* libssse3.a */; };
 		3CF371E81D0DC3DA003A1FAB /* libudns.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF371E71D0DC3DA003A1FAB /* libudns.a */; };
 		3EBACE4014C19C7734B86285 /* Pods_ShadowsocksX_NGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388120F062D7EB7DD0D8DDCA /* Pods_ShadowsocksX_NGTests.framework */; };
+		4DBB76BBD851C058F2AB4149 /* Pods_ShadowsocksX2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AE875F0928AA8935B20E48 /* Pods_ShadowsocksX2.framework */; };
 		9B07EFAC1D048E880052D9DF /* menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B07EFA81D048E880052D9DF /* menu_icon@2x.png */; };
 		9B07EFAD1D048E880052D9DF /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B07EFA91D048E880052D9DF /* menu_icon.png */; };
 		9B07EFAE1D048E880052D9DF /* menu_icon_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B07EFAA1D048E880052D9DF /* menu_icon_disabled.png */; };
@@ -26,7 +27,7 @@
 		9B0BFFE91D0460A70040E62B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0BFFE81D0460A70040E62B /* AppDelegate.swift */; };
 		9B0BFFEB1D0460A70040E62B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B0BFFEA1D0460A70040E62B /* Assets.xcassets */; };
 		9B0BFFEE1D0460A70040E62B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B0BFFEC1D0460A70040E62B /* MainMenu.xib */; };
-		9B0BFFF91D0460A70040E62B /* ShadowsocksX_NGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0BFFF81D0460A70040E62B /* ShadowsocksX_NGTests.swift */; };
+		9B0BFFF91D0460A70040E62B /* ShadowsocksX2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0BFFF81D0460A70040E62B /* ShadowsocksX2Tests.swift */; };
 		9B172A6A1D0ADDDD00B87B9A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B172A6C1D0ADDDD00B87B9A /* Localizable.strings */; };
 		9B2491B41D0ACC3A003BBECC /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B2491B61D0ACC3A003BBECC /* PreferencesWindowController.xib */; };
 		9B2491B71D0ACC3E003BBECC /* AdvPreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B2491B91D0ACC3E003BBECC /* AdvPreferencesWindowController.xib */; };
@@ -93,12 +94,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		05FCAAE077826BBD07EECF68 /* Pods-ShadowsocksX2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowsocksX2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowsocksX2Tests/Pods-ShadowsocksX2Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		12A536509DA597D9160635D5 /* Pods-ShadowsocksX2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowsocksX2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowsocksX2Tests/Pods-ShadowsocksX2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1E7783AEDB4A3BDDC9FF16AC /* libPods-proxy_conf_helper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-proxy_conf_helper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2639571FDA9A46C039F87503 /* Pods-ShadowsocksX2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowsocksX2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowsocksX2/Pods-ShadowsocksX2.debug.xcconfig"; sourceTree = "<group>"; };
 		283ED1A8E9B711AC65670031 /* Pods_ShadowsocksX_NG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShadowsocksX_NG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		297AF069022A197FD8E9D226 /* Pods-proxy_conf_helper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proxy_conf_helper.release.xcconfig"; path = "Pods/Target Support Files/Pods-proxy_conf_helper/Pods-proxy_conf_helper.release.xcconfig"; sourceTree = "<group>"; };
 		388120F062D7EB7DD0D8DDCA /* Pods_ShadowsocksX_NGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShadowsocksX_NGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38D98033EC78D2798A7C71C9 /* Pods-tt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tt.release.xcconfig"; path = "Pods/Target Support Files/Pods-tt/Pods-tt.release.xcconfig"; sourceTree = "<group>"; };
-		3A33E4E1C20AD6FD20731219 /* Pods-tt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tt/Pods-tt.debug.xcconfig"; sourceTree = "<group>"; };
 		3C28D2FD1D0EB98100630700 /* SSLocalManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SSLocalManager.c; sourceTree = "<group>"; };
 		3C28D2FE1D0EB98100630700 /* SSLocalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLocalManager.h; sourceTree = "<group>"; };
 		3CBEE8B21D12680F00FF1698 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
@@ -1002,19 +1004,19 @@
 		3CF371E11D0DC3BF003A1FAB /* libssse3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssse3.a; path = "shadowsocks-libev/libsodium/src/libsodium/.libs/libssse3.a"; sourceTree = "<group>"; };
 		3CF371E71D0DC3DA003A1FAB /* libudns.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libudns.a; path = "shadowsocks-libev/libudns/.libs/libudns.a"; sourceTree = "<group>"; };
 		41A324A7BD4034B063486138 /* libPods-tt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		50D54926AA21B0D4D8DD9C4F /* Pods-ShadowsocksX-NGUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowsocksX-NGUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowsocksX-NGUITests/Pods-ShadowsocksX-NGUITests.release.xcconfig"; sourceTree = "<group>"; };
-		58907E7F50405104B42CB189 /* Pods-ShadowsocksX-NGUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowsocksX-NGUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowsocksX-NGUITests/Pods-ShadowsocksX-NGUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		487E4D8604A4A414FD4FFA27 /* Pods_ShadowsocksX2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShadowsocksX2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52AE875F0928AA8935B20E48 /* Pods_ShadowsocksX2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShadowsocksX2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B07EFA81D048E880052D9DF /* menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon@2x.png"; sourceTree = "<group>"; };
 		9B07EFA91D048E880052D9DF /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon.png; sourceTree = "<group>"; };
 		9B07EFAA1D048E880052D9DF /* menu_icon_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon_disabled.png; sourceTree = "<group>"; };
 		9B07EFAB1D048E880052D9DF /* menu_icon_disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon_disabled@2x.png"; sourceTree = "<group>"; };
-		9B0BFFE51D0460A70040E62B /* ShadowsocksX-NG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ShadowsocksX-NG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B0BFFE51D0460A70040E62B /* ShadowsocksX2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShadowsocksX2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0BFFE81D0460A70040E62B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B0BFFEA1D0460A70040E62B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B0BFFED1D0460A70040E62B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9B0BFFEF1D0460A70040E62B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B0BFFF41D0460A70040E62B /* ShadowsocksX-NGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ShadowsocksX-NGTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B0BFFF81D0460A70040E62B /* ShadowsocksX_NGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowsocksX_NGTests.swift; sourceTree = "<group>"; };
+		9B0BFFF41D0460A70040E62B /* ShadowsocksX2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShadowsocksX2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B0BFFF81D0460A70040E62B /* ShadowsocksX2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowsocksX2Tests.swift; sourceTree = "<group>"; };
 		9B0BFFFA1D0460A70040E62B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B172A5D1D0ACEA100B87B9A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AdvPreferencesWindowController.strings"; sourceTree = "<group>"; };
 		9B172A601D0ADA5B00B87B9A /* genstrings.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = genstrings.py; sourceTree = "<group>"; };
@@ -1056,6 +1058,7 @@
 		9BEEF0791D05631500FC52B3 /* AdvPreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvPreferencesWindowController.swift; sourceTree = "<group>"; };
 		A79FEC45D302C83D899BBEA5 /* Pods-ShadowsocksX-NGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowsocksX-NGTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowsocksX-NGTests/Pods-ShadowsocksX-NGTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A945C0516A335B538244F4BF /* Pods-ShadowsocksX-NGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowsocksX-NGTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowsocksX-NGTests/Pods-ShadowsocksX-NGTests.release.xcconfig"; sourceTree = "<group>"; };
+		B0B072F5E6D083C144A75027 /* Pods-ShadowsocksX2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowsocksX2.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowsocksX2/Pods-ShadowsocksX2.release.xcconfig"; sourceTree = "<group>"; };
 		B4E6A97CA843F3943524B686 /* Pods-proxy_conf_helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proxy_conf_helper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-proxy_conf_helper/Pods-proxy_conf_helper.debug.xcconfig"; sourceTree = "<group>"; };
 		E9E9FB3855DA55D0710EE7BD /* Pods-ShadowsocksX-NG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowsocksX-NG.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowsocksX-NG/Pods-ShadowsocksX-NG.release.xcconfig"; sourceTree = "<group>"; };
 		FE3237E9FB24D9B924A0E630 /* Pods-ShadowsocksX-NG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowsocksX-NG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowsocksX-NG/Pods-ShadowsocksX-NG.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1067,7 +1070,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B3FFF3E1D08D9910019A709 /* SystemConfiguration.framework in Frameworks */,
-				258E511BA910B0521B24DAB8 /* Pods_ShadowsocksX_NG.framework in Frameworks */,
 				3CF371E81D0DC3DA003A1FAB /* libudns.a in Frameworks */,
 				3CF371E21D0DC3BF003A1FAB /* libaesni.a in Frameworks */,
 				3CF371E61D0DC3BF003A1FAB /* libssse3.a in Frameworks */,
@@ -1077,6 +1079,7 @@
 				3CF371DA1D0DC394003A1FAB /* libcork.a in Frameworks */,
 				3CF371E51D0DC3BF003A1FAB /* libsse41.a in Frameworks */,
 				3CF371D81D0DC348003A1FAB /* libshadowsocks-libev.a in Frameworks */,
+				4DBB76BBD851C058F2AB4149 /* Pods_ShadowsocksX2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1085,6 +1088,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EBACE4014C19C7734B86285 /* Pods_ShadowsocksX_NGTests.framework in Frameworks */,
+				08791C187E8FCBA818F51F89 /* Pods_ShadowsocksX2Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1104,14 +1108,14 @@
 			children = (
 				FE3237E9FB24D9B924A0E630 /* Pods-ShadowsocksX-NG.debug.xcconfig */,
 				E9E9FB3855DA55D0710EE7BD /* Pods-ShadowsocksX-NG.release.xcconfig */,
-				58907E7F50405104B42CB189 /* Pods-ShadowsocksX-NGUITests.debug.xcconfig */,
-				50D54926AA21B0D4D8DD9C4F /* Pods-ShadowsocksX-NGUITests.release.xcconfig */,
 				B4E6A97CA843F3943524B686 /* Pods-proxy_conf_helper.debug.xcconfig */,
 				297AF069022A197FD8E9D226 /* Pods-proxy_conf_helper.release.xcconfig */,
 				A79FEC45D302C83D899BBEA5 /* Pods-ShadowsocksX-NGTests.debug.xcconfig */,
 				A945C0516A335B538244F4BF /* Pods-ShadowsocksX-NGTests.release.xcconfig */,
-				3A33E4E1C20AD6FD20731219 /* Pods-tt.debug.xcconfig */,
-				38D98033EC78D2798A7C71C9 /* Pods-tt.release.xcconfig */,
+				2639571FDA9A46C039F87503 /* Pods-ShadowsocksX2.debug.xcconfig */,
+				B0B072F5E6D083C144A75027 /* Pods-ShadowsocksX2.release.xcconfig */,
+				05FCAAE077826BBD07EECF68 /* Pods-ShadowsocksX2Tests.debug.xcconfig */,
+				12A536509DA597D9160635D5 /* Pods-ShadowsocksX2Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -3794,8 +3798,8 @@
 		9B0BFFE61D0460A70040E62B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9B0BFFE51D0460A70040E62B /* ShadowsocksX-NG.app */,
-				9B0BFFF41D0460A70040E62B /* ShadowsocksX-NGTests.xctest */,
+				9B0BFFE51D0460A70040E62B /* ShadowsocksX2.app */,
+				9B0BFFF41D0460A70040E62B /* ShadowsocksX2.xctest */,
 				9B3FFF441D09CD3B0019A709 /* proxy_conf_helper */,
 			);
 			name = Products;
@@ -3833,7 +3837,7 @@
 		9B0BFFF71D0460A70040E62B /* ShadowsocksX-NGTests */ = {
 			isa = PBXGroup;
 			children = (
-				9B0BFFF81D0460A70040E62B /* ShadowsocksX_NGTests.swift */,
+				9B0BFFF81D0460A70040E62B /* ShadowsocksX2Tests.swift */,
 				9B0BFFFA1D0460A70040E62B /* Info.plist */,
 			);
 			path = "ShadowsocksX-NGTests";
@@ -3879,6 +3883,8 @@
 				388120F062D7EB7DD0D8DDCA /* Pods_ShadowsocksX_NGTests.framework */,
 				1E7783AEDB4A3BDDC9FF16AC /* libPods-proxy_conf_helper.a */,
 				41A324A7BD4034B063486138 /* libPods-tt.a */,
+				52AE875F0928AA8935B20E48 /* Pods_ShadowsocksX2.framework */,
+				487E4D8604A4A414FD4FFA27 /* Pods_ShadowsocksX2Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -3903,9 +3909,9 @@
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
-		9B0BFFE41D0460A70040E62B /* ShadowsocksX-NG */ = {
+		9B0BFFE41D0460A70040E62B /* ShadowsocksX2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B0B00081D0460A70040E62B /* Build configuration list for PBXNativeTarget "ShadowsocksX-NG" */;
+			buildConfigurationList = 9B0B00081D0460A70040E62B /* Build configuration list for PBXNativeTarget "ShadowsocksX2" */;
 			buildPhases = (
 				937BE5D489BA3023ED1E5FF4 /* [CP] Check Pods Manifest.lock */,
 				9B0BFFE11D0460A70040E62B /* Sources */,
@@ -3920,14 +3926,14 @@
 				3C61AE861D127FBB005032DB /* PBXTargetDependency */,
 				9B3FFF531D09E2B30019A709 /* PBXTargetDependency */,
 			);
-			name = "ShadowsocksX-NG";
+			name = ShadowsocksX2;
 			productName = "ShadowsocksX-NG";
-			productReference = 9B0BFFE51D0460A70040E62B /* ShadowsocksX-NG.app */;
+			productReference = 9B0BFFE51D0460A70040E62B /* ShadowsocksX2.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9B0BFFF31D0460A70040E62B /* ShadowsocksX-NGTests */ = {
+		9B0BFFF31D0460A70040E62B /* ShadowsocksX2Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B0B000B1D0460A70040E62B /* Build configuration list for PBXNativeTarget "ShadowsocksX-NGTests" */;
+			buildConfigurationList = 9B0B000B1D0460A70040E62B /* Build configuration list for PBXNativeTarget "ShadowsocksX2Tests" */;
 			buildPhases = (
 				282A061B85775B53CCC9DC25 /* [CP] Check Pods Manifest.lock */,
 				9B0BFFF01D0460A70040E62B /* Sources */,
@@ -3941,9 +3947,9 @@
 			dependencies = (
 				9B0BFFF61D0460A70040E62B /* PBXTargetDependency */,
 			);
-			name = "ShadowsocksX-NGTests";
+			name = ShadowsocksX2Tests;
 			productName = "ShadowsocksX-NGTests";
-			productReference = 9B0BFFF41D0460A70040E62B /* ShadowsocksX-NGTests.xctest */;
+			productReference = 9B0BFFF41D0460A70040E62B /* ShadowsocksX2.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		9B3FFF431D09CD3B0019A709 /* proxy_conf_helper */ = {
@@ -3990,7 +3996,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9B0BFFE01D0460A70040E62B /* Build configuration list for PBXProject "ShadowsocksX-NG" */;
+			buildConfigurationList = 9B0BFFE01D0460A70040E62B /* Build configuration list for PBXProject "ShadowsocksX2" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -4004,8 +4010,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9B0BFFE41D0460A70040E62B /* ShadowsocksX-NG */,
-				9B0BFFF31D0460A70040E62B /* ShadowsocksX-NGTests */,
+				9B0BFFE41D0460A70040E62B /* ShadowsocksX2 */,
+				9B0BFFF31D0460A70040E62B /* ShadowsocksX2Tests */,
 				9B3FFF431D09CD3B0019A709 /* proxy_conf_helper */,
 				3CDFD3941D0D87EB00DA857D /* shadowsocks-libev */,
 			);
@@ -4090,7 +4096,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShadowsocksX-NGTests/Pods-ShadowsocksX-NGTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShadowsocksX2Tests/Pods-ShadowsocksX2Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8BA956D02E983660CC07C0DE /* [CP] Embed Pods Frameworks */ = {
@@ -4105,7 +4111,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShadowsocksX-NG/Pods-ShadowsocksX-NG-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShadowsocksX2/Pods-ShadowsocksX2-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9315297709C6BC97E19DCDF9 /* [CP] Copy Pods Resources */ = {
@@ -4150,7 +4156,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShadowsocksX-NG/Pods-ShadowsocksX-NG-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShadowsocksX2/Pods-ShadowsocksX2-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E630FA9F2608E6E16C518739 /* [CP] Copy Pods Resources */ = {
@@ -4165,7 +4171,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShadowsocksX-NGTests/Pods-ShadowsocksX-NGTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShadowsocksX2Tests/Pods-ShadowsocksX2Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -4196,7 +4202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B0BFFF91D0460A70040E62B /* ShadowsocksX_NGTests.swift in Sources */,
+				9B0BFFF91D0460A70040E62B /* ShadowsocksX2Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4218,7 +4224,7 @@
 		};
 		9B0BFFF61D0460A70040E62B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9B0BFFE41D0460A70040E62B /* ShadowsocksX-NG */;
+			target = 9B0BFFE41D0460A70040E62B /* ShadowsocksX2 */;
 			targetProxy = 9B0BFFF51D0460A70040E62B /* PBXContainerItemProxy */;
 		};
 		9B3FFF531D09E2B30019A709 /* PBXTargetDependency */ = {
@@ -4375,7 +4381,7 @@
 		};
 		9B0B00091D0460A70040E62B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE3237E9FB24D9B924A0E630 /* Pods-ShadowsocksX-NG.debug.xcconfig */;
+			baseConfigurationReference = 2639571FDA9A46C039F87503 /* Pods-ShadowsocksX2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -4398,8 +4404,8 @@
 					"$(PROJECT_DIR)/shadowsocks-libev/libipset/.libs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.qiuyuzhou.ShadowsocksX-NG";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.shadowsocks.ShadowsocksX2;
+				PRODUCT_NAME = ShadowsocksX2;
 				SWIFT_OBJC_BRIDGING_HEADER = "ShadowsocksX-NG/ShadowsocksX-NG-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -4407,7 +4413,7 @@
 		};
 		9B0B000A1D0460A70040E62B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9E9FB3855DA55D0710EE7BD /* Pods-ShadowsocksX-NG.release.xcconfig */;
+			baseConfigurationReference = B0B072F5E6D083C144A75027 /* Pods-ShadowsocksX2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -4430,37 +4436,37 @@
 					"$(PROJECT_DIR)/shadowsocks-libev/libipset/.libs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.qiuyuzhou.ShadowsocksX-NG";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.shadowsocks.ShadowsocksX2;
+				PRODUCT_NAME = ShadowsocksX2;
 				SWIFT_OBJC_BRIDGING_HEADER = "ShadowsocksX-NG/ShadowsocksX-NG-Bridging-Header.h";
 			};
 			name = Release;
 		};
 		9B0B000C1D0460A70040E62B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A79FEC45D302C83D899BBEA5 /* Pods-ShadowsocksX-NGTests.debug.xcconfig */;
+			baseConfigurationReference = 05FCAAE077826BBD07EECF68 /* Pods-ShadowsocksX2Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "ShadowsocksX-NGTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.qiuyuzhou.ShadowsocksX-NGTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShadowsocksX-NG.app/Contents/MacOS/ShadowsocksX-NG";
+				PRODUCT_NAME = ShadowsocksX2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShadowsocksX2.app/Contents/MacOS/ShadowsocksX2";
 			};
 			name = Debug;
 		};
 		9B0B000D1D0460A70040E62B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A945C0516A335B538244F4BF /* Pods-ShadowsocksX-NGTests.release.xcconfig */;
+			baseConfigurationReference = 12A536509DA597D9160635D5 /* Pods-ShadowsocksX2Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "ShadowsocksX-NGTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.qiuyuzhou.ShadowsocksX-NGTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShadowsocksX-NG.app/Contents/MacOS/ShadowsocksX-NG";
+				PRODUCT_NAME = ShadowsocksX2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShadowsocksX2.app/Contents/MacOS/ShadowsocksX2";
 			};
 			name = Release;
 		};
@@ -4494,7 +4500,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B0B00081D0460A70040E62B /* Build configuration list for PBXNativeTarget "ShadowsocksX-NG" */ = {
+		9B0B00081D0460A70040E62B /* Build configuration list for PBXNativeTarget "ShadowsocksX2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B0B00091D0460A70040E62B /* Debug */,
@@ -4503,7 +4509,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B0B000B1D0460A70040E62B /* Build configuration list for PBXNativeTarget "ShadowsocksX-NGTests" */ = {
+		9B0B000B1D0460A70040E62B /* Build configuration list for PBXNativeTarget "ShadowsocksX2Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B0B000C1D0460A70040E62B /* Debug */,
@@ -4512,7 +4518,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B0BFFE01D0460A70040E62B /* Build configuration list for PBXProject "ShadowsocksX-NG" */ = {
+		9B0BFFE01D0460A70040E62B /* Build configuration list for PBXProject "ShadowsocksX2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B0B00061D0460A70040E62B /* Debug */,

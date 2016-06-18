@@ -1,55 +1,48 @@
-# ShadowsocksX-NG
+# ShadowsocksX2
 
-Current version is 1.0 Beta
+Current version is 2.0 Beta
 
-[![Build Status](https://travis-ci.org/qiuyuzhou/ShadowsocksX-NG.svg?branch=develop)](https://travis-ci.org/qiuyuzhou/ShadowsocksX-NG)
+This project is base on [ShadowsocksX-NG](https://github.com/qiuyuzhou/ShadowsocksX-NG) with different implment details.
 
-Next Generation of [ShadowsocksX](https://github.com/shadowsocks/shadowsocks-iOS)
-
-## Why Another Implement
-
-It's hard to maintaine the original implement. There are too many unused code in it. 
-It also embed ss-local source. It's crazy to maitaine depandences of ss-local. 
-So it's hard to update ss-local version.
-
-Now I just copy the ss-local from home brew. Run ss-local executable as a Launch Agent in background. 
-Serve pac js file as a file url. So there are only some souce codes related to GUI left. 
-Then I rewrite the gui code by swift.
 
 ## Requirements
 
-### Running
+### Runtime
 
 - Mac OS X 10.10 +
 
 ### Building
 
-- XCode 7.3+
-- cocoapod 1.0.1+
+- XCode 7.3
+- cocoapod 1.0.1
+- Homebrew 0.9.9
+- Run "sh build.sh" to configrue after git clone.
 
 ## Fetures
 
-- Use ss-local from shadowsocks-libev 2.4.6
+- Embad shadowsocks-libev
 - Update PAC by download GFW List from github.
 - Show QRCode for current server profile.
 - Scan QRCode from screen.
 - Auto launch at login.
 - User rules for PAC.
-- Support OTA
+- Support One Time Auth
 - An advance preferences panel to configure:
-	- Local socks5 listen address.
-	- Local socks5 listen port.
-	- Local socks5 timeout.
-	- If enable UDP relay.
-	- GFW List url.
+    - Local socks5 listen address.
+    - Local socks5 listen port.
+    - Local socks5 timeout.
+    - If enable UDP relay.
+    - GFW List url.
 
 ## Diferences with orignal ShadowsocksX
 
-Run ss-local as backgroud service through launchd, not in app process.
-So after you quit the app, the ss-local maybe is still running. 
+- Support configure Socks5 Listen Adress and Port.
+- Support [One Time Auth](https://shadowsocks.org/en/spec/one-time-auth.html).
 
-Add a manual mode which won't configure the system proxy settings. 
-Then you could configure your apps to use socks5 proxy manual.
+## Diferences with ShadowsocksX-NG
+
+- Run ss-local as in app thread mode which share the same lifecycle with GUI.
+- After you quit the app, The ss-local will be terminated.
 
 ## TODO List
 
@@ -57,5 +50,4 @@ Then you could configure your apps to use socks5 proxy manual.
 
 ## License
 
-The project is released under the terms of GPLv3.
-
+- The project is released under the terms of GPLv3.
