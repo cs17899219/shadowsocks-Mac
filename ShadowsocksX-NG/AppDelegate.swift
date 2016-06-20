@@ -86,9 +86,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
                 for url in urls {
                     let profielDict = ParseSSURL(url)
                     if let profielDict = profielDict {
-                        let profile = ServerProfile.fromDictionary(profielDict)
+                        let profile = AppProfile.fromDictionary(profielDict)
                         
-                        SSLocalManager.profileManager.profiles.append(profile)
+                        AppProfileManager.instance.profiles.append(profile)
                         isChanged = true
                         
                         let userNote = NSUserNotification()
@@ -109,7 +109,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
                 }
                 
                 if isChanged {
-                    SSLocalManager.profileManager.save()
+                    AppProfileManager.instance.save()
                     self.updateServersMenu()
                 }
             }
@@ -192,7 +192,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     
     @IBAction func showQRCodeForCurrentServer(sender: NSMenuItem) {
         var errMsg: String?
-        if let profile = SSLocalManager.profileManager.getActiveProfile() {
+        if let profile = AppProfileManager.instance.getActivedProfile() {
             if profile.isValid() {
                 // Show window
                 if qrcodeWinCtrl != nil{
@@ -276,9 +276,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     
     @IBAction func selectServer(sender: NSMenuItem) {
         let index = sender.tag
-        let newProfile = SSLocalManager.profileManager.profiles[index]
-        if newProfile.uuid != SSLocalManager.profileManager.activeProfileId {
-            SSLocalManager.profileManager.setActiveProfiledId(newProfile.uuid)
+        let newProfile = AppProfileManager.instance.profiles[index]
+        if newProfile.uuid != AppProfileManager.instance.activeProfileId {
+            AppProfileManager.instance.activeProfileId = newProfile.uuid
             NSNotificationCenter.defaultCenter()
                 .postNotificationName(NOTIFY_SERVER_PROFILES_CHANGED, object: nil)
         }
@@ -343,7 +343,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let preferencesItem = serversPreferencesMenuItem
         
         var i = 0
-        for p in SSLocalManager.profileManager.profiles {
+        for p in AppProfileManager.instance.profiles {
             let item = NSMenuItem()
             item.tag = i
             if p.remark.isEmpty {
@@ -351,7 +351,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             } else {
                 item.title = "\(p.remark) (\(p.serverHost):\(p.serverPort))"
             }
-            if SSLocalManager.profileManager.activeProfileId == p.uuid {
+            if AppProfileManager.instance.activeProfileId == p.uuid {
                 item.state = 1
             }
             if !p.isValid() {
@@ -362,7 +362,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             serversMenuItem.submenu?.addItem(item)
             i += 1
         }
-        if !SSLocalManager.profileManager.profiles.isEmpty {
+        if !AppProfileManager.instance.profiles.isEmpty {
             serversMenuItem.submenu?.addItem(NSMenuItem.separatorItem())
         }
         serversMenuItem.submenu?.addItem(preferencesItem)

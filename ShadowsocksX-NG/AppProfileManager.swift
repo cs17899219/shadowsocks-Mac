@@ -8,59 +8,64 @@
 
 import Cocoa
 
-class ServerProfileManager: NSObject {
+class AppProfileManager {
     
-    var profiles:[ServerProfile]
-    var activeProfileId: String?
+    static let instance:AppProfileManager = AppProfileManager()
     
-    override init() {
-        profiles = [ServerProfile]()
-        
+    var profiles:[AppProfile] = [AppProfile]()
+    
+    private var _activePID: String!;
+    
+    var activeProfileId: String? {
+        set {
+            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "ActiveServerProfileId")
+            _activePID = newValue;
+        }
+        get {
+            return _activePID
+        }
+    }
+    
+    private init() {
         let defaults = NSUserDefaults.standardUserDefaults()
         if let _profiles = defaults.arrayForKey("ServerProfiles") {
             for _profile in _profiles {
-                let profile = ServerProfile.fromDictionary(_profile as! [String : AnyObject])
+                let profile = AppProfile.fromDictionary(_profile as! [String : AnyObject])
                 profiles.append(profile)
             }
         }
         activeProfileId = defaults.stringForKey("ActiveServerProfileId")
     }
     
-    func setActiveProfiledId(id: String) {
-        activeProfileId = id
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(id, forKey: "ActiveServerProfileId")
-    }
-    
     func save() {
         let defaults = NSUserDefaults.standardUserDefaults()
+        
+        // Save Profiles
         var _profiles = [AnyObject]()
         for profile in profiles {
             if profile.isValid() {
-                let _profile = profile.toDictionary()
-                _profiles.append(_profile)
+                _profiles.append(profile.toDictionary())
             }
         }
         defaults.setObject(_profiles, forKey: "ServerProfiles")
         
-        if getActiveProfile() == nil {
+        // Deal with ActivedProfile
+        if getActivedProfile() == nil {
             activeProfileId = nil
         }
         
         if activeProfileId != nil {
             defaults.setObject(activeProfileId, forKey: "ActiveServerProfileId")
-//            writeSSLocalConfFile((getActiveProfile()?.toJsonConfig())!)
         } else {
             defaults.removeObjectForKey("ActiveServerProfileId")
- //           removeSSLocalConfFile()
         }
     }
     
-    func getActiveProfile() -> ServerProfile? {
-        if let id = activeProfileId {
-            for p in profiles {
-                if p.uuid == id {
-                    return p
+    func getActivedProfile() -> AppProfile? {
+        if let uuid = activeProfileId {
+            for profile in profiles {
+                if (profile.uuid == uuid) {
+                    return profile
                 }
             }
             return nil

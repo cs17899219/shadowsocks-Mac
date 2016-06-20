@@ -17,8 +17,6 @@ let SS_LOCAL_LOG_PATH = NSHomeDirectory() + "/Library/Logs/ShadowsocksLocal.log"
 
 class SSLocalManager: NSObject {
     
-    static let profileManager:ServerProfileManager = ServerProfileManager();
-    
     static var sslocalserver:NSThread!
     
     class func reload() {
@@ -63,7 +61,7 @@ class SSLocalManager: NSObject {
     }
     
     class func getProfile() -> profile_t? {
-        if let pf = profileManager.getActiveProfile() {
+        if let pf = AppProfileManager.instance.getActivedProfile() {
             if pf.isValid() {
                 
                 var profile = profile_t()

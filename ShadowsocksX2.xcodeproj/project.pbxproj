@@ -10,6 +10,8 @@
 		08791C187E8FCBA818F51F89 /* Pods_ShadowsocksX2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487E4D8604A4A414FD4FFA27 /* Pods_ShadowsocksX2Tests.framework */; };
 		3C2945061D0ECE260021E0B7 /* SSLocalManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C28D2FD1D0EB98100630700 /* SSLocalManager.c */; };
 		3C7395711D1C4D0E0051ACC7 /* SWBApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7395701D1C4D0E0051ACC7 /* SWBApplication.m */; };
+		3C7395741D1C4DD00051ACC7 /* AppProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7395721D1C4DD00051ACC7 /* AppProfile.swift */; };
+		3C7395751D1C4DD00051ACC7 /* AppProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7395731D1C4DD00051ACC7 /* AppProfileManager.swift */; };
 		3CF371D81D0DC348003A1FAB /* libshadowsocks-libev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF371D71D0DC348003A1FAB /* libshadowsocks-libev.a */; };
 		3CF371DA1D0DC394003A1FAB /* libcork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF371D91D0DC394003A1FAB /* libcork.a */; };
 		3CF371DC1D0DC3A6003A1FAB /* libev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF371DB1D0DC3A6003A1FAB /* libev.a */; };
@@ -50,8 +52,6 @@
 		9B3FFF4C1D09D8F70019A709 /* install_helper.sh in Resources */ = {isa = PBXBuildFile; fileRef = 9B3FFF4B1D09D8F70019A709 /* install_helper.sh */; };
 		9B3FFF4F1D09D9D50019A709 /* ProxyConfHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3FFF4E1D09D9D50019A709 /* ProxyConfHelper.m */; };
 		9B3FFF541D09E2D10019A709 /* proxy_conf_helper in Resources */ = {isa = PBXBuildFile; fileRef = 9B3FFF441D09CD3B0019A709 /* proxy_conf_helper */; };
-		9BEEF06E1D04DCE400FC52B3 /* ServerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEEF06D1D04DCE400FC52B3 /* ServerProfile.swift */; };
-		9BEEF0701D04DDB100FC52B3 /* ServerProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEEF06F1D04DDB100FC52B3 /* ServerProfileManager.swift */; };
 		9BEEF0751D04EF3E00FC52B3 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEEF0731D04EF3E00FC52B3 /* PreferencesWindowController.swift */; };
 		9BEEF0781D04FE8A00FC52B3 /* LaunchAgentUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEEF0771D04FE8A00FC52B3 /* LaunchAgentUtils.swift */; };
 		9BEEF07B1D05631500FC52B3 /* AdvPreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEEF0791D05631500FC52B3 /* AdvPreferencesWindowController.swift */; };
@@ -106,6 +106,8 @@
 		3C28D2FE1D0EB98100630700 /* SSLocalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLocalManager.h; sourceTree = "<group>"; };
 		3C73956F1D1C4D0E0051ACC7 /* SWBApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWBApplication.h; sourceTree = "<group>"; };
 		3C7395701D1C4D0E0051ACC7 /* SWBApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWBApplication.m; sourceTree = "<group>"; };
+		3C7395721D1C4DD00051ACC7 /* AppProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppProfile.swift; sourceTree = "<group>"; };
+		3C7395731D1C4DD00051ACC7 /* AppProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppProfileManager.swift; sourceTree = "<group>"; };
 		3CBEE8B21D12680F00FF1698 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		3CDFCF401D0D87B800DA857D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3CDFCF411D0D87B800DA857D /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
@@ -1054,8 +1056,6 @@
 		9B3FFF501D09DAEA0019A709 /* proxy_conf_helper_version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = proxy_conf_helper_version.h; sourceTree = "<group>"; };
 		9B3FFF511D09DBA20019A709 /* ShadowsocksX-NG-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShadowsocksX-NG-Bridging-Header.h"; sourceTree = "<group>"; };
 		9BE8FBC11D0B71CF00CAFD01 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PreferencesWindowController.strings"; sourceTree = "<group>"; };
-		9BEEF06D1D04DCE400FC52B3 /* ServerProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerProfile.swift; sourceTree = "<group>"; };
-		9BEEF06F1D04DDB100FC52B3 /* ServerProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerProfileManager.swift; sourceTree = "<group>"; };
 		9BEEF0731D04EF3E00FC52B3 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		9BEEF0771D04FE8A00FC52B3 /* LaunchAgentUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchAgentUtils.swift; sourceTree = "<group>"; };
 		9BEEF0791D05631500FC52B3 /* AdvPreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvPreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -3829,8 +3829,8 @@
 				9B3FFF4D1D09D9D50019A709 /* ProxyConfHelper.h */,
 				9B3FFF4E1D09D9D50019A709 /* ProxyConfHelper.m */,
 				9B3FFF501D09DAEA0019A709 /* proxy_conf_helper_version.h */,
-				9BEEF06D1D04DCE400FC52B3 /* ServerProfile.swift */,
-				9BEEF06F1D04DDB100FC52B3 /* ServerProfileManager.swift */,
+				3C7395721D1C4DD00051ACC7 /* AppProfile.swift */,
+				3C7395731D1C4DD00051ACC7 /* AppProfileManager.swift */,
 				3C28D2FD1D0EB98100630700 /* SSLocalManager.c */,
 				3C28D2FE1D0EB98100630700 /* SSLocalManager.h */,
 				3C73956F1D1C4D0E0051ACC7 /* SWBApplication.h */,
@@ -4187,15 +4187,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B3FFF171D072FDE0019A709 /* LaunchAtLoginController.m in Sources */,
+				3C7395741D1C4DD00051ACC7 /* AppProfile.swift in Sources */,
 				9B3FFF4F1D09D9D50019A709 /* ProxyConfHelper.m in Sources */,
 				3C7395711D1C4D0E0051ACC7 /* SWBApplication.m in Sources */,
 				9B3FFF1E1D0732660019A709 /* Utils.m in Sources */,
 				9B3FFF321D08CEE40019A709 /* SWBQRCodeWindowController.m in Sources */,
 				9B3FFF211D08826E0019A709 /* PACUtils.swift in Sources */,
 				9B3FFF141D0705810019A709 /* Notifications.swift in Sources */,
-				9BEEF0701D04DDB100FC52B3 /* ServerProfileManager.swift in Sources */,
+				3C7395751D1C4DD00051ACC7 /* AppProfileManager.swift in Sources */,
 				9BEEF07B1D05631500FC52B3 /* AdvPreferencesWindowController.swift in Sources */,
-				9BEEF06E1D04DCE400FC52B3 /* ServerProfile.swift in Sources */,
 				9B3FFF0D1D05FEB30019A709 /* Utils.swift in Sources */,
 				9BEEF0751D04EF3E00FC52B3 /* PreferencesWindowController.swift in Sources */,
 				9B0BFFE91D0460A70040E62B /* AppDelegate.swift in Sources */,
