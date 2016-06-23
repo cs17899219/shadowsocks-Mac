@@ -289,7 +289,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         if let appUrl = ws.URLForApplicationWithBundleIdentifier("com.apple.Console") {
             try! ws.launchApplicationAtURL(appUrl
                 ,options: .Default
-                ,configuration: [NSWorkspaceLaunchConfigurationArguments: "~/Library/Logs/ss-local.log"])
+                ,configuration: [NSWorkspaceLaunchConfigurationArguments: [SS_LOCAL_LOG_PATH]])
         }
     }
     

@@ -13,6 +13,8 @@ let APP_SUPPORT_DIR = "/Library/Application Support/ShadowsocksX-NE/"
 let LAUNCH_AGENT_DIR = "/Library/LaunchAgents/"
 let LAUNCH_AGENT_CONF_NAME = "com.qiuyuzhou.shadowsocksX-NE.local.plist"
 
+let SS_LOCAL_LOG_PATH = NSHomeDirectory() + "/Library/Logs/ShadowsocksLocal.log"
+
 class SSLocalManager: NSObject {
     
     static let profileManager:ServerProfileManager = ServerProfileManager();
@@ -89,7 +91,7 @@ class SSLocalManager: NSObject {
                 profile.mode = defaults.boolForKey("LocalSocks5.EnableUDPRelay") ? 1 : 0
                 profile.verbose = defaults.boolForKey("LocalSocks5.EnableVerboseMode") ? 1 : 0
                 
-                let logFilePath = (NSHomeDirectory() + "/Library/Logs/ShadowsocksLocal.log" as NSString).UTF8String
+                let logFilePath = (SS_LOCAL_LOG_PATH as NSString).UTF8String
                 profile.log = UnsafeMutablePointer(logFilePath);
 
                 return profile
