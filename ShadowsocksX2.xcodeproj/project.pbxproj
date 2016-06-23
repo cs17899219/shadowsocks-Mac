@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		08791C187E8FCBA818F51F89 /* Pods_ShadowsocksX2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487E4D8604A4A414FD4FFA27 /* Pods_ShadowsocksX2Tests.framework */; };
 		3C2945061D0ECE260021E0B7 /* SSLocalManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C28D2FD1D0EB98100630700 /* SSLocalManager.c */; };
+		3C7395711D1C4D0E0051ACC7 /* SWBApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7395701D1C4D0E0051ACC7 /* SWBApplication.m */; };
 		3CF371D81D0DC348003A1FAB /* libshadowsocks-libev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF371D71D0DC348003A1FAB /* libshadowsocks-libev.a */; };
 		3CF371DA1D0DC394003A1FAB /* libcork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF371D91D0DC394003A1FAB /* libcork.a */; };
 		3CF371DC1D0DC3A6003A1FAB /* libev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF371DB1D0DC3A6003A1FAB /* libev.a */; };
@@ -103,6 +104,8 @@
 		388120F062D7EB7DD0D8DDCA /* Pods_ShadowsocksX_NGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShadowsocksX_NGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C28D2FD1D0EB98100630700 /* SSLocalManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SSLocalManager.c; sourceTree = "<group>"; };
 		3C28D2FE1D0EB98100630700 /* SSLocalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLocalManager.h; sourceTree = "<group>"; };
+		3C73956F1D1C4D0E0051ACC7 /* SWBApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWBApplication.h; sourceTree = "<group>"; };
+		3C7395701D1C4D0E0051ACC7 /* SWBApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWBApplication.m; sourceTree = "<group>"; };
 		3CBEE8B21D12680F00FF1698 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		3CDFCF401D0D87B800DA857D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3CDFCF411D0D87B800DA857D /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
@@ -3830,6 +3833,8 @@
 				9BEEF06F1D04DDB100FC52B3 /* ServerProfileManager.swift */,
 				3C28D2FD1D0EB98100630700 /* SSLocalManager.c */,
 				3C28D2FE1D0EB98100630700 /* SSLocalManager.h */,
+				3C73956F1D1C4D0E0051ACC7 /* SWBApplication.h */,
+				3C7395701D1C4D0E0051ACC7 /* SWBApplication.m */,
 			);
 			path = "ShadowsocksX-NG";
 			sourceTree = "<group>";
@@ -4183,6 +4188,7 @@
 			files = (
 				9B3FFF171D072FDE0019A709 /* LaunchAtLoginController.m in Sources */,
 				9B3FFF4F1D09D9D50019A709 /* ProxyConfHelper.m in Sources */,
+				3C7395711D1C4D0E0051ACC7 /* SWBApplication.m in Sources */,
 				9B3FFF1E1D0732660019A709 /* Utils.m in Sources */,
 				9B3FFF321D08CEE40019A709 /* SWBQRCodeWindowController.m in Sources */,
 				9B3FFF211D08826E0019A709 /* PACUtils.swift in Sources */,
