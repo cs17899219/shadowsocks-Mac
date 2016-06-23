@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import ShadowsocksX2
 
 class ShadowsocksX_NGTests: XCTestCase {
     

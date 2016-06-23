@@ -10,7 +10,7 @@ import Cocoa
 
 
 
-class ServerProfile: NSObject {
+class AppProfile: NSObject {
     var uuid: String
     
     var serverHost: String = ""
@@ -28,9 +28,9 @@ class ServerProfile: NSObject {
         self.uuid = uuid
     }
     
-    static func fromDictionary(data:[String:AnyObject]) -> ServerProfile {
+    static func fromDictionary(data:[String:AnyObject]) -> AppProfile {
         let cp = {
-            (profile: ServerProfile) in
+            (profile: AppProfile) in
             profile.serverHost = data["ServerHost"] as! String
             profile.serverPort = (data["ServerPort"] as! NSNumber).unsignedShortValue
             profile.method = data["Method"] as! String
@@ -44,11 +44,11 @@ class ServerProfile: NSObject {
         }
         
         if let id = data["Id"] as? String {
-            let profile = ServerProfile(uuid: id)
+            let profile = AppProfile(uuid: id)
             cp(profile)
             return profile
         } else {
-            let profile = ServerProfile()
+            let profile = AppProfile()
             cp(profile)
             return profile
         }

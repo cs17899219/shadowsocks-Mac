@@ -27,16 +27,16 @@ class PreferencesWindowController: NSWindowController
     @IBOutlet weak var copyURLBtn: NSButton!
     
     var defaults: NSUserDefaults!
-    var profileMgr: ServerProfileManager!
+    var profileMgr: AppProfileManager!
     
-    var editingProfile: ServerProfile!
+    var editingProfile: AppProfile!
 
     override func windowDidLoad() {
         super.windowDidLoad()
 
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
         defaults = NSUserDefaults.standardUserDefaults()
-        profileMgr = SSLocalManager.profileManager
+        profileMgr = AppProfileManager.instance
         
         methodTextField.addItemsWithObjectValues([
             "aes-128-cfb",
@@ -61,7 +61,7 @@ class PreferencesWindowController: NSWindowController
             return
         }
         profilesTableView.beginUpdates()
-        let profile = ServerProfile()
+        let profile = AppProfile()
         profile.remark = "New Server".localized
         profileMgr.profiles.append(profile)
         
