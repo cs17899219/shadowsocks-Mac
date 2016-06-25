@@ -4,6 +4,7 @@ Current version is 2.0 Beta
 
 This project is base on [ShadowsocksX-NG](https://github.com/qiuyuzhou/ShadowsocksX-NG) with different implment details.
 
+[![Build Status](https://travis-ci.org/cs17899219/shadowsocks-Mac.svg?branch=master)](https://travis-ci.org/cs17899219/shadowsocks-Mac)
 
 ## Requirements
 
