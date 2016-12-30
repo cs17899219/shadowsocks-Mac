@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ServerProfileManager: NSObject {
+class AppProfileManager {
     
     static let instance:ServerProfileManager = ServerProfileManager()
     
@@ -21,7 +21,7 @@ class ServerProfileManager: NSObject {
         let defaults = UserDefaults.standard
         if let _profiles = defaults.array(forKey: "ServerProfiles") {
             for _profile in _profiles {
-                let profile = ServerProfile.fromDictionary(_profile as! [String : AnyObject])
+                let profile = AppProfile.fromDictionary(_profile as! [String : AnyObject])
                 profiles.append(profile)
             }
         }
@@ -45,7 +45,8 @@ class ServerProfileManager: NSObject {
         }
         defaults.set(_profiles, forKey: "ServerProfiles")
         
-        if getActiveProfile() == nil {
+        // Deal with ActivedProfile
+        if getActivedProfile() == nil {
             activeProfileId = nil
         }
         
@@ -58,11 +59,11 @@ class ServerProfileManager: NSObject {
         }
     }
     
-    func getActiveProfile() -> ServerProfile? {
-        if let id = activeProfileId {
-            for p in profiles {
-                if p.uuid == id {
-                    return p
+    func getActivedProfile() -> AppProfile? {
+        if let uuid = activeProfileId {
+            for profile in profiles {
+                if (profile.uuid == uuid) {
+                    return profile
                 }
             }
             return nil

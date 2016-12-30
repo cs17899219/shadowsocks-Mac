@@ -1,24 +1,13 @@
-# ShadowsocksX-NG
+# ShadowsocksX2
 
-Current version is 1.3
+Current version is 2.3
 
-[![Build Status](https://travis-ci.org/shadowsocks/ShadowsocksX-NG.svg?branch=develop)](https://travis-ci.org/shadowsocks/ShadowsocksX-NG)
+This project is base on [ShadowsocksX-NG](https://github.com/qiuyuzhou/ShadowsocksX-NG) with different implment details.
 
-Next Generation of [ShadowsocksX](https://github.com/shadowsocks/shadowsocks-iOS)
-
-## Why?
-
-It's hard to maintain the original implementation as there is too much unused code in it.
-It also embeds the ss-local source. It's crazy to maintain dependencies of ss-local.
-So it's hard to update the ss-local version.
-
-Now I just copied the ss-local from homebrew. Run ss-local executable as a Launch Agent in the background.
-Serve PAC js file as a file URL. So there is only some source code related to GUI left.
-Then I will rewrite the GUI code in Swift.
 
 ## Requirements
 
-### Running
+### Runtime
 
 - Mac OS X 10.11 +
 
@@ -26,6 +15,8 @@ Then I will rewrite the GUI code in Swift.
 
 - XCode 8.0+
 - cocoapod 1.0.1+
+- Homebrew 0.9.9
+- Run "sh build.sh" to configrue after git clone.
 
 ## Download
 
@@ -33,35 +24,32 @@ From [here](https://github.com/shadowsocks/ShadowsocksX-NG/releases/)
 
 ## Fetures
 
-- Use ss-local from shadowsocks-libev 2.4.6
-- Update PAC by download GFW List from GitHub.
+- Embad shadowsocks-libev (lastest)
+- Update PAC by download GFW List from github.
 - Show QRCode for current server profile.
 - Scan QRCode from screen.
 - Auto launch at login.
 - User rules for PAC.
-- Support OTA
-- An advanced preferences panel to configure:
-	- Local socks5 listen address.
-	- Local socks5 listen port.
-	- Local socks5 timeout.
-	- If enable UDP relay.
-	- GFW List URL.
+- Support One Time Auth
+- An advance preferences panel to configure:
+    - Local socks5 listen address.
+    - Local socks5 listen port.
+    - Local socks5 timeout.
+    - If enable UDP relay.
+    - GFW List URL.
 - Manual specify network service profiles which would be configure the proxy.
 - Could reorder shadowsocks profiles by drag & drop in servers preferences panel.
 
+
 ## Different from orignal ShadowsocksX
 
-Run ss-local as a background service through launchd, not as an in-app process.
-So after you quit the app, the ss-local maybe be still running.
+- Support configure Socks5 Listen Adress and Port.
+- Support [One Time Auth](https://shadowsocks.org/en/spec/one-time-auth.html).
 
-Added a manual mode which won't configure the system proxy settings.
-Then you could configure your apps to use socks5 proxy manual.
+## Diferences with ShadowsocksX-NG
 
-## Contributing
-
-Contributions must be available on a separately named branch based on the latest version of the main branch develop.
-
-ref: [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/)
+- Run ss-local as in app thread mode which share the same lifecycle with GUI.
+- After you quit the app, The ss-local will be terminated.
 
 ## TODO List
 
@@ -69,5 +57,4 @@ ref: [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/)
 
 ## License
 
-The project is released under the terms of the GPLv3.
-
+- The project is released under the terms of GPLv3.

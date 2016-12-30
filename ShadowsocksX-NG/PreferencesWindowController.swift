@@ -32,7 +32,7 @@ class PreferencesWindowController: NSWindowController
     var defaults: UserDefaults!
     var profileMgr: ServerProfileManager!
     
-    var editingProfile: ServerProfile!
+    var editingProfile: AppProfile!
 
 
     override func windowDidLoad() {
@@ -70,7 +70,7 @@ class PreferencesWindowController: NSWindowController
             return
         }
         profilesTableView.beginUpdates()
-        let profile = ServerProfile()
+        let profile = AppProfile()
         profile.remark = "New Server".localized
         profileMgr.profiles.append(profile)
         

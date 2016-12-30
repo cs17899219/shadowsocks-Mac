@@ -15,7 +15,93 @@ let LAUNCH_AGENT_DIR = "/Library/LaunchAgents/"
 let LAUNCH_AGENT_CONF_SSLOCAL_NAME = "com.qiuyuzhou.shadowsocksX-NG.local.plist"
 let LAUNCH_AGENT_CONF_PRIVOXY_NAME = "com.qiuyuzhou.shadowsocksX-NG.http.plist"
 
+let SS_LOCAL_LOG_PATH = NSHomeDirectory() + "/Library/Logs/ShadowsocksLocal.log"
 
+class SSLocalManager: NSObject {
+    
+    static var sslocalserver:NSThread!
+    
+    class func reload() {
+        NSLog("Begin sslocal reload")
+        sslocal_stop()
+        if let pf = getProfile() {
+            sslocal_start(pf)
+        }
+        NSLog("Finished sslocal reload")
+        
+        /* Add task
+        let serialQueue1 = dispatch_queue_create(
+            "sslocal_restart", DISPATCH_QUEUE_SERIAL)
+        dispatch_async(serialQueue1) { () -> Void in
+            NSLog("Begin sslocal reload")
+            
+            sslocal_stop()
+            
+            if let pf = getProfile() {
+                while( 0 != sslocal_start(pf)){
+                    NSLog("wait for sslocal stop.")
+                    sleep(1);
+                }
+            }
+            
+            NSLog("Finished sslocal reload")
+        } */
+    }
+    
+    class func start() {
+        NSLog("Begin sslocal start")
+        if let pf = getProfile() {
+            sslocal_start(pf)
+        }
+        NSLog("Finished sslocal start")
+    }
+    
+    class func stop() {
+        NSLog("Begin sslocal stop")
+        sslocal_stop()
+        NSLog("Finished sslocal stop")
+    }
+    
+    class func getProfile() -> profile_t? {
+        if let pf = AppProfileManager.instance.getActivedProfile() {
+            if pf.isValid() {
+                
+                var profile = profile_t()
+                
+                let remote_host = (pf.serverHost as NSString).UTF8String
+                profile.remote_host = UnsafeMutablePointer(remote_host)
+                
+                let method = (pf.method as NSString).UTF8String
+                profile.method = UnsafeMutablePointer(method)
+                
+                let password = (pf.password as NSString).UTF8String
+                profile.password = UnsafeMutablePointer(password)
+                
+                profile.remote_port = Int32(pf.serverPort)
+                
+                profile.auth = (pf.ota as Bool) ? 1 : 0
+                
+                let defaults = NSUserDefaults.standardUserDefaults()
+                
+                let local_host = (defaults.stringForKey("LocalSocks5.ListenAddress")! as NSString).UTF8String
+                profile.local_addr = UnsafeMutablePointer(local_host)
+                profile.local_port = Int32(UInt16(defaults.integerForKey("LocalSocks5.ListenPort")))
+                profile.timeout = Int32(UInt32(defaults.integerForKey("LocalSocks5.Timeout")))
+                
+                profile.mode = defaults.boolForKey("LocalSocks5.EnableUDPRelay") ? 1 : 0
+                profile.verbose = defaults.boolForKey("LocalSocks5.EnableVerboseMode") ? 1 : 0
+                
+                let logFilePath = (SS_LOCAL_LOG_PATH as NSString).UTF8String
+                profile.log = UnsafeMutablePointer(logFilePath);
+
+                return profile
+            }
+        }
+        return nil
+    }
+}
+
+/*
 func getFileSHA1Sum(_ filepath: String) -> String {
     if let data = try? Data(contentsOf: URL(fileURLWithPath: filepath)) {
         return data.sha1()
@@ -320,3 +406,4 @@ func SyncPrivoxy() {
     }
     }
 }
+*/

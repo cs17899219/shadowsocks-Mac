@@ -1,20 +1,18 @@
 PODS:
-  - Alamofire (4.0.1)
+  - Alamofire (3.4.1)
   - BRLOptionParser (0.3.1)
-  - GCDWebServer (3.3.3):
-    - GCDWebServer/Core (= 3.3.3)
-  - GCDWebServer/Core (3.3.3)
+  - OpenSSL-OSX (1.0.208)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0.1)
+  - Alamofire (~> 3.4)
   - BRLOptionParser (~> 0.3.1)
-  - GCDWebServer (~> 3.0)
+  - OpenSSL-OSX (~> 1.0.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   BRLOptionParser: a03256a8ff003ca1f5376c55f55f210e085a3958
-  GCDWebServer: 1c39a1f0763e4eb492bee021e4270fce097d3555
+  OpenSSL-OSX: 31de46705f5696ab6ce9078a7c1fe36d27e16bcf
 
-PODFILE CHECKSUM: e675030dbd86de38216dc6c44e64ca1458be94bc
+PODFILE CHECKSUM: 007c428aa91edca02851a40fc17eb58b9e9a254d
 
 COCOAPODS: 1.0.1

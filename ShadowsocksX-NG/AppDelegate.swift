@@ -56,7 +56,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         defaults.register(defaults: [
             "ShadowsocksOn": true,
             "ShadowsocksRunningMode": "auto",
-            "LocalSocks5.ListenPort": NSNumber(value: 1086 as UInt16),
+            "LocalSocks5.ListenPort": NSNumber(value: 1080 as UInt16),
             "LocalSocks5.ListenAddress": "127.0.0.1",
             "PacServer.ListenPort":NSNumber(value: 8090 as UInt16),
             "LocalSocks5.Timeout": NSNumber(value: 60 as UInt),
@@ -76,6 +76,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         statusItem.image = image
         statusItem.menu = statusMenu
         
+        // Start sslocal
+        SSLocalManager.start()
         
         let notifyCenter = NotificationCenter.default
         notifyCenter.addObserver(forName: NSNotification.Name(rawValue: NOTIFY_ADV_PROXY_CONF_CHANGED), object: nil, queue: nil
@@ -95,13 +97,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
                     }
                 }
                 self.updateServersMenu()
-                SyncSSLocal()
+                SSLocalManager.reload()
             }
         )
         notifyCenter.addObserver(forName: NSNotification.Name(rawValue: NOTIFY_ADV_CONF_CHANGED), object: nil, queue: nil
             , using: {
                 (note) in
-                SyncSSLocal()
+				NSLog("ADVANCED_CONF_CHANGED")
+                SSLocalManager.reload()SyncSSLocal()
                 self.applyConfig()
             }
         )
@@ -145,7 +148,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
                 }
                 
                 if isChanged {
-                    mgr.save()
+                    AppProfileManager.instance.save()
                     self.updateServersMenu()
                 }
             }
@@ -156,6 +159,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             , andSelector: #selector(self.handleURLEvent)
             , forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
         
+        
         updateMainMenu()
         updateServersMenu()
         updateRunningModeMenu()
@@ -164,13 +168,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         ProxyConfHelper.install()
         ProxyConfHelper.startMonitorPAC()
         applyConfig()
-        SyncSSLocal()
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
-        StopSSLocal()
-        StopPrivoxy()
+        SSLocalManager.stop();
+ 		StopPrivoxy()
         ProxyConfHelper.disableProxy()
     }
     
@@ -186,9 +189,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
                 ProxyConfHelper.enablePACProxy()
             } else if mode == "global" {
                 ProxyConfHelper.enableGlobalProxy()
-            } else if mode == "manual" {
-                ProxyConfHelper.disableProxy()
-            }
+            } //else if mode == "manual" {
+             //   ProxyConfHelper.disableProxy()
+            //}
         } else {
             StopSSLocal()
             StopPrivoxy()
@@ -401,7 +404,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             proxyMenuItem.title = "Proxy - Auto By PAC".localized
             autoModeMenuItem.state = 1
             globalModeMenuItem.state = 0
-            manualModeMenuItem.state = 0
         } else if mode == "global" {
             proxyMenuItem.title = "Proxy - Global".localized
             autoModeMenuItem.state = 0
@@ -460,7 +462,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let preferencesItem = serversPreferencesMenuItem
         
         var i = 0
-        for p in mgr.profiles {
+        for p in AppProfileManager.instance.profiles {
             let item = NSMenuItem()
             item.tag = i
             if p.remark.isEmpty {
@@ -468,7 +470,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             } else {
                 item.title = "\(p.remark) (\(p.serverHost):\(p.serverPort))"
             }
-            if mgr.activeProfileId == p.uuid {
+            if AppProfileManager.instance.activeProfileId == p.uuid {
                 item.state = 1
             }
             if !p.isValid() {

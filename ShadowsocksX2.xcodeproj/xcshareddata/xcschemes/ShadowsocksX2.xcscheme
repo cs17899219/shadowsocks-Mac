@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9B3FFF431D09CD3B0019A709"
-               BuildableName = "proxy_conf_helper"
-               BlueprintName = "proxy_conf_helper"
-               ReferencedContainer = "container:ShadowsocksX-NG.xcodeproj">
+               BlueprintIdentifier = "9B0BFFE41D0460A70040E62B"
+               BuildableName = "ShadowsocksX2.app"
+               BlueprintName = "ShadowsocksX2"
+               ReferencedContainer = "container:ShadowsocksX2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,14 +28,24 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9B0BFFF31D0460A70040E62B"
+               BuildableName = "ShadowsocksX2.xctest"
+               BlueprintName = "ShadowsocksX2Tests"
+               ReferencedContainer = "container:ShadowsocksX2.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9B3FFF431D09CD3B0019A709"
-            BuildableName = "proxy_conf_helper"
-            BlueprintName = "proxy_conf_helper"
-            ReferencedContainer = "container:ShadowsocksX-NG.xcodeproj">
+            BlueprintIdentifier = "9B0BFFE41D0460A70040E62B"
+            BuildableName = "ShadowsocksX2.app"
+            BlueprintName = "ShadowsocksX2"
+            ReferencedContainer = "container:ShadowsocksX2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,18 +65,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9B3FFF431D09CD3B0019A709"
-            BuildableName = "proxy_conf_helper"
-            BlueprintName = "proxy_conf_helper"
-            ReferencedContainer = "container:ShadowsocksX-NG.xcodeproj">
+            BlueprintIdentifier = "9B0BFFE41D0460A70040E62B"
+            BuildableName = "ShadowsocksX2.app"
+            BlueprintName = "ShadowsocksX2"
+            ReferencedContainer = "container:ShadowsocksX2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-h"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,10 +84,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9B3FFF431D09CD3B0019A709"
-            BuildableName = "proxy_conf_helper"
-            BlueprintName = "proxy_conf_helper"
-            ReferencedContainer = "container:ShadowsocksX-NG.xcodeproj">
+            BlueprintIdentifier = "9B0BFFE41D0460A70040E62B"
+            BuildableName = "ShadowsocksX2.app"
+            BlueprintName = "ShadowsocksX2"
+            ReferencedContainer = "container:ShadowsocksX2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

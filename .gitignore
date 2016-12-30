@@ -65,6 +65,10 @@ profile
 *.ipa
 
 ####
+# CocoaPods
+Pods/
+!Podfile.lock
+
+####
 # Carthage
 Carthage/Build
-
